@@ -27,6 +27,7 @@
         "less": "^4.1.1",
         "less-loader": "^7.3.0",
         "vue": "^2.6.14",
-        "vue-light-gallery": "^1.0.1"
+        "vue-light-gallery": "^1.0.1",
+        "webpack": "^5.69.1"
     }
 }

@@ -8,6 +8,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/css/app.css">
 
         <!-- Styles -->
         <style>
@@ -24,8 +25,9 @@
     <body class="antialiased">
 
         <div id="app">
-            <movie-list></movie-list>
+            <movie-list movies="{{json_encode($movies)}}"></movie-list>
         </div>
+
         <script src="/js/app.js"></script>
     </body>
 
