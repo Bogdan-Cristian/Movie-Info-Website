@@ -1,8 +1,9 @@
 <template>
     <div class="list_wrapper">
-        <div class="list_wrapper__movie_wrapper" v-for="movie in movies">
+        <div class="list_wrapper__movie_wrapper" v-for="movie in this.prepareMoviesData">
             <movie-card :movie="movie"></movie-card>
         </div>
+
     </div>
 </template>
 
@@ -15,8 +16,14 @@ export default {
 
         }
     },
+    props: ['movies'],
+    computed: {
+        prepareMoviesData: function () {
+            return JSON.parse(this.movies);
+        }
+    },
     created() {
-        this.movies = movieApi.getMovies()
+        console.log(this.prepareMoviesData);
     },
     components: {MovieCard}
 }
@@ -28,9 +35,9 @@ export default {
         flex-wrap: wrap;
 
         .list_wrapper__movie_wrapper {
-            flex-basis: calc(100% / 3);
+            flex-basis: calc(100% / 5);
             padding: 7px 5px;
-            border:1px solid red;
+            margin-bottom: 20px;
         }
     }
 
