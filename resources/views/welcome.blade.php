@@ -25,9 +25,10 @@
     <body class="antialiased">
 
         <div id="app">
+            <filter-bar></filter-bar>
+            <pagination></pagination>
             <movie-list movies="{{json_encode($movies)}}"></movie-list>
         </div>
-
         <script src="/js/app.js"></script>
     </body>
 
