@@ -1,11 +1,11 @@
 <template>
     <div class="filter_bar_wrapper">
-        <div class="wrapper__box" @click="filterContent()">
+        <div class="wrapper__box" @click="filterContent('popularity')">
             <p class="box__text">Popularity</p>
         </div>
 
-        <div class="wrapper__box" @click="filterContent()">
-            <p class="box__text">ASC</p>
+        <div class="wrapper__box" @click="filterContent('releaseDate')">
+            <p class="box__text">Release Date</p>
         </div>
 
         <div class="wrapper__box" @click="filterContent()">
@@ -18,9 +18,20 @@
 export default {
     name: "filter-bar",
     methods: {
-        filterContent() {
+        filterContent(sortName) {
+            let url = new URL(window.location.href);
+            switch (sortName) {
+                case 'popularity':
+                    url.searchParams.set('sort_by','popularity.desc')
+                    break;
+                case 'releaseDate':
+                    url.searchParams.set('sort_by','release_date.desc')
+                    break;
+            }
+
+            window.location.href = url;
         }
-    }
+    },
 }
 </script>
 

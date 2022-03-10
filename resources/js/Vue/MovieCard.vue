@@ -1,7 +1,7 @@
 <template>
     <div class="card_wrapper">
         <div class="card_wrapper__image">
-            <img :src="movie.poster_path" alt="" class="image__img">
+            <img :src="movie.poster_path" alt="Image" class="image__img" onerror="window.location.origin + '/images/movie_image.jpeg'">
         </div>
 
         <div class="card_wrapper__text">
@@ -62,6 +62,7 @@ export default {
 
             .image__img {
                 width: 100%;
+                background:white;
                 height: auto;
             }
         }
