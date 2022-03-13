@@ -15,9 +15,8 @@
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
         "postcss": "^8.1.14",
-        "vue-loader": "^15.9.8",
+        "vue-loader": "^17.0.0",
         "vue-style-loader": "^4.1.3",
-        "vue-template-compiler": "^2.6.14",
         "webpack-cli": "^4.9.2"
     },
     "dependencies": {
@@ -27,8 +26,10 @@
         "jw-vue-pagination": "^1.0.3",
         "less": "^4.1.1",
         "less-loader": "^7.3.0",
-        "vue": "^2.6.14",
+        "vue": "^3.2.31",
         "vue-light-gallery": "^1.0.1",
+        "vue-template-compiler": "^2.6.14",
+        "vuex": "^4.0.2",
         "webpack": "^5.69.1"
     }
 }

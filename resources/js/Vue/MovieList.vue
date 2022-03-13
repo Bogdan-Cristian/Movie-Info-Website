@@ -20,7 +20,7 @@ export default {
     computed: {
         prepareMoviesData: function () {
             return JSON.parse(this.movies);
-        }
+        },
     },
     created() {
         console.log(this.prepareMoviesData);

@@ -1,7 +1,6 @@
 <template>
     <div class="pagination">
-
-        <h1 class="pagination__button" @click="togglePageList()">Page: {{ actualPage }}
+        <h1 class="pagination__button" @click="togglePageList()">
             <svg class="button__icon" v-bind:class="(displayPageList)? 'close' : ''" xmlns="http://www.w3.org/2000/svg"
                  xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px"
                  viewBox="0 0 330 330" style="enable-background:new 0 0 330 330;" xml:space="preserve">
@@ -38,6 +37,8 @@
                 <g>
 </g>
 </svg>
+            <span>Page: {{ actualPage }} </span>
+
         </h1>
 
         <div class="pagination_wrapper" v-if="displayPageList">
@@ -57,7 +58,7 @@ export default {
         return {
             actualPage: url.searchParams.get('page') ? parseInt(url.searchParams.get('page')) :  1,
             pages: [],
-            displayPageList: false
+            displayPageList: false,
         }
     },
     methods: {
@@ -100,11 +101,13 @@ export default {
     computed: {
         activePage() {
 
+        },
+        counter() {
+            return this.$store.state.count;
         }
     },
     created() {
         this.generatePageList();
-        console.log(this.actualPage)
     }
 
 }
@@ -129,7 +132,7 @@ export default {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 200px;
+        width: 100px;
         // Icon
         .button__icon {
             max-height: 20px;
